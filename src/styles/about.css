@@ -1,0 +1,107 @@
+.about-container {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px;
+  
+  background: linear-gradient(
+    135deg,
+    rgba(41, 128, 185, 0.85) 0%,
+    rgba(109, 213, 250, 0.85) 50%,
+    rgba(255, 255, 255, 0.9) 100%
+  );
+  
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  box-shadow: 
+    0 8px 32px rgba(31, 38, 135, 0.37),
+    0 4px 8px rgba(0, 0, 0, 0.1),
+    inset 0 0 20px rgba(255, 255, 255, 0.2);
+
+  transition: all 0.5s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-container::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 70%
+  );
+  animation: float 15s infinite linear;
+  z-index: -1;
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-5%, 5%);
+  }
+  50% {
+    transform: translate(-10%, 0);
+  }
+  75% {
+    transform: translate(-5%, -5%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.about-container:hover {
+  /* transform: translateY(-5px); */
+  box-shadow: 
+    0 12px 40px rgba(31, 38, 135, 0.5),
+    0 6px 12px rgba(0, 0, 0, 0.15),
+    inset 0 0 30px rgba(255, 255, 255, 0.3);
+}
+
+.about-text, .about-image {
+    width: 50%;
+}
+
+.about-text {
+  max-width: 60%;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.about-text h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1.2rem;
+  background: linear-gradient(90deg, #fff, #e0f7fa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transform: perspective(1000px) rotateY(-5deg);
+  transition: transform 0.5s ease;
+}
+
+.about-image:hover img {
+  transform: perspective(1000px) rotateY(0deg);
+}
