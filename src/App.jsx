@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import './App.css'
 import Header from './components/Header'
-import Main from './components/Main'
 import Weather from './components/Weather'
 import About from './components/About'
+import Footer from './components/Footer'
 
 function App() {
 
@@ -11,8 +11,8 @@ function App() {
     <>
       <Header />
       <About />
-      {/* <Main /> */}
       <Weather />
+      <Footer />
     </>
   )
 }
